@@ -3,6 +3,7 @@ package com.AEP.backend.controller;
 import com.AEP.backend.model.Chamado;
 import com.AEP.backend.service.ChamadoService;
 import org.springframework.web.bind.annotation.*;
+import com.AEP.backend.dto.StatusRequest;
 
 import java.util.List;
 
@@ -22,6 +23,14 @@ public class ChamadoController {
     @GetMapping
     public List<Chamado> listar(){
         return service.listar();
+    }
+    @GetMapping("/{id}")
+    public Chamado buscaPorId(@PathVariable Long id){
+        return service.buscaPorId(id);
+    }
+    @PutMapping("/{id}/status")
+    public Chamado atualizarStatus(@PathVariable Long id,@RequestBody StatusRequest request){
+        return service.atualizarStatus(id, request.getStatus());
     }
 
 }

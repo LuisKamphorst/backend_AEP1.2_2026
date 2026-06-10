@@ -21,9 +21,7 @@ public class UsuarioService {
         return repository.findAll();
     }
     public Usuario login(String email, String senha){
-        Usuario usuario = repository.findByEmail(email)
-                .orElseThrow(() ->
-                        new RuntimeException("Usuário ou senha inválidos."));
+        Usuario usuario = repository.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuário ou senha inválidos."));
         if (!usuario.getSenha().equals(senha)){
             throw new RuntimeException("Usuário ou senha inválidos.");
         }

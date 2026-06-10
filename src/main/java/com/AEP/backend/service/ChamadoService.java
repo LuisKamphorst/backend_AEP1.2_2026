@@ -21,5 +21,13 @@ public class ChamadoService {
     public List<Chamado> listar(){
         return repository.findAll();
     }
+    public Chamado buscaPorId(Long id){
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Não encontrado"));
+    }
+    public Chamado atualizarStatus(Long id, String status){
+        Chamado chamado = repository.findById(id).orElseThrow(() -> new RuntimeException("Não encontrado"));
+        chamado.setStatus(status);
+        return repository.save(chamado);
+    }
 
 }

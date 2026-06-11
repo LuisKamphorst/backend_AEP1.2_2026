@@ -15,6 +15,9 @@ public class UsuarioService {
         this.repository = repository;
     }
     public Usuario cadastrar(Usuario usuario){
+        if(repository.findByEmail(usuario.getEmail()).isPresent()){
+            throw new RuntimeException("Email já cadastrado.");
+        }
         return repository.save(usuario);
     }
     public List<Usuario> listar(){

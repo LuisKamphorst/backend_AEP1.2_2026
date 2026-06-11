@@ -14,6 +14,9 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private String telefone;
+    private String cpf;
+    private String endereco;
 
     public Usuario(){}
 
@@ -25,12 +28,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getNome() {
+        return nome;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -41,11 +44,35 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getNome() {
-        return nome;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 }

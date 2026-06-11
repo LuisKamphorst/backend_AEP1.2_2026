@@ -29,5 +29,14 @@ public class ChamadoService {
         chamado.setStatus(status);
         return repository.save(chamado);
     }
+    public void deletar(Long id){
+        repository.deleteById(id);
+    }
+    public List<Chamado> buscarPorStatus(String status){
+        return repository.findByStatus(status);
+    }
+    public List<Chamado> buscarPorPrioridade(String prioridade){
+        return repository.findByPrioridade(prioridade);
+    }
 
 }

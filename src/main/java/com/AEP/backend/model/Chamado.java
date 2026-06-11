@@ -11,9 +11,11 @@ public class Chamado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
-    private String descricao;
     private String status;
+    private String categoria;
+    private String descricao;
+    private String localizacao;
+    private String prioridade;
 
     public Chamado(){}
 
@@ -25,12 +27,12 @@ public class Chamado {
 //        this.id = id;
 //    }
 
-    public String getTitulo() {
-        return titulo;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDescricao() {
@@ -41,11 +43,27 @@ public class Chamado {
         this.descricao = descricao;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 }

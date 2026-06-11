@@ -32,5 +32,17 @@ public class ChamadoController {
     public Chamado atualizarStatus(@PathVariable Long id,@RequestBody StatusRequest request){
         return service.atualizarStatus(id, request.getStatus());
     }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id){
+        service.deletar(id);
+    }
+    @GetMapping("/status/{status}")
+    public List<Chamado> buscarPorStatus(@PathVariable String status){
+        return service.buscarPorStatus(status);
+    }
+    @GetMapping("/prioridade/{prioridade}")
+    public List<Chamado> buscarPorPrioridade(@PathVariable String prioridade){
+        return service.buscarPorPrioridade(prioridade);
+    }
 
 }
